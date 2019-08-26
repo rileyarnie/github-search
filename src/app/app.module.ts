@@ -12,6 +12,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { UserserviceService } from './userservice';
 import { DaysAgoPipe } from './days-ago.pipe';
+import { StrikethroughDirective } from './strikethrough.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DaysAgoPipe } from './days-ago.pipe';
     RepositoriesComponent,
     NotfoundComponent,
     DaysAgoPipe,
+    StrikethroughDirective
 
   ],
   imports: [
