@@ -1,6 +1,14 @@
 <div class="container-fluid">
     <app-search-form (searchOutput)= "repoSearch($event)"></app-search-form>
       <div class="container">
-     
+        <div *ngFor="let repository of repo" class="card">
+          <div class="card-body">
+            {{repository.name}} <br>
+            {{repository.html_url}} <br>
+            {{repository.description}} <br>
+            {{repository.created_at | date}}
+          </div>
+        </div>
+      </div>
   </div>
   
