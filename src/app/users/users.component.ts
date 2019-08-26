@@ -17,7 +17,7 @@ repo: Repos;
   searchs(searchName) {
     this.myService.searchUSer(searchName).then(
       (success) => {
-        this.user = this.myService.foundUser;
+        this.user = this.myService.userIdentity;
       },
       (error) => {
         console.log(error);
@@ -25,7 +25,7 @@ repo: Repos;
     );
     this.repoService.getrepos(searchName).then(
         (results) => {
-          this.repo = this.repoService.allRepos;
+          this.repo = this.repoService.totalrepos;
           console.log(this.repo);
         },
         (error) => {

@@ -12,10 +12,10 @@ export class RepositoriesComponent implements OnInit {
   repo: Repos;
   constructor( public repoService: UserserviceService ) { }
 
-  repoSearch(searchName) {
+  findrepo(searchName) {
     this.repoService.getrepos(searchName).then(
       (results) => {
-        this.repo = this.repoService.allRepos;
+        this.repo = this.repoService.totalrepos;
         console.log(this.repo);
       },
       (error) => {
@@ -25,7 +25,7 @@ export class RepositoriesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.repoSearch('rileyarnie');
+    this.findrepo('rileyarnie');
   }
 
 }

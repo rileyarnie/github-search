@@ -8,20 +8,20 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class UserserviceService {
-    foundUser: User;
-    allRepos: Repos;
+    userIdentity: User;
+    totalrepos: Repos;
     // tslint:disable-next-line: variable-name
     up_key = '2248a8bd35eb376f0b586b764c50c76b67be3a1b';
 
     constructor(private http: HttpClient) {
-        this.foundUser = new User('', '', '', '', 0, 0, 0, '');
+        this.userIdentity = new User('', '', '', '', 0, 0, 0, '');
         // tslint:disable-next-line: new-parens
-        this.allRepos = new Repos('', '', '', new Date);
+        this.totalrepos = new Repos('', '', '', new Date);
     }
 
     searchUSer(searchName: string) {
 
-        interface Responce {
+        interface response {
             url: string;
             login: string;
             html_url: string;
@@ -33,10 +33,10 @@ export class UserserviceService {
         }
 
         return new Promise((resolve, reject) => {
-            this.http.get<Responce>('https://api.github.com/users/' + searchName + '?access_token=' + this.up_key).toPromise().then(
+            this.http.get<response>('https://api.github.com/users/' + searchName + '?access_token=' + this.up_key).toPromise().then(
                 (result) => {
-                    this.foundUser = result;
-                    console.log(this.foundUser);
+                    this.userIdentity = result;
+                    console.log(this.userIdentity);
                     resolve();
                 },
                 (error) => {
@@ -61,7 +61,7 @@ export class UserserviceService {
             // tslint:disable-next-line: max-line-length
             this.http.get<Repos>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?access_token=' + this.up_key).toPromise().then(
                 (results) => {
-                    this.allRepos = results;
+                    this.totalrepos = results;
                     resolve();
                 },
                 (error) => {
