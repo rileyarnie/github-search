@@ -1,0 +1,80 @@
+<div class="jumbotron blue">
+  <h2><strong>Find Other GitHub Users </strong></h2>
+</div>
+<div class="conatiner">
+    <app-search-form (searchOutput)= "searchs($event)"></app-search-form>
+    <br>
+    <br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="container-fluid col-md-4">
+           <div class="panel panel-heading">
+               <div class="panel-body">
+                   <img src="{{user.avatar_url}}" class="img-thumbnail" style="height: 300px; width: 300px" alt="">
+                   
+             
+               </div>
+               <div>
+               <h5><strong>{{user.login}}</strong></h5>
+
+               </div>
+               <br>
+               <button class="btn-primary btn-small">View Profile</button>
+        </div>
+           
+           </div>
+           <br>
+           <div class="col-md-3">
+             <div class="panel">
+               <h6><strong>{{user.login}}'s Profile Details</strong></h6>
+               
+             </div>
+             <div class="panel">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                     
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                       
+                        <td>Followers</td>
+                        <td>{{user.followers}}</td>
+                      </tr>
+                      <tr>
+                        
+                        <td>Following</td>
+                        <td>{{user.following}}</td>
+                      </tr>
+                      <tr>
+                        
+                          <td>Public Repositories</td>
+                          <td>{{user.public_repos}}</td>
+                        </tr>
+                      <tr>
+                        
+                        <td>Joined</td>
+               
+                      </tr>
+                    </tbody>
+                  </table>
+             </div>
+             
+             
+
+             
+           </div>
+           <div class="col-md-3">
+     
+            </div>
+     </div>
+</div>
+
+
+
+
+
