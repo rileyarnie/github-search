@@ -33,11 +33,6 @@
              <div class="panel">
                 <table class="table table-striped">
                     <thead>
-                      <tr>
-                     
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                      </tr>
                     </thead>
                     <tbody>
                       <tr>
@@ -58,6 +53,7 @@
                       <tr>
                         
                         <td>Joined</td>
+                        <td>{{user.created_at | date}}</td>
                
                       </tr>
                     </tbody>
@@ -72,6 +68,21 @@
      
             </div>
      </div>
+</div>
+
+<div class="container">
+  <h3>Repositories</h3>
+  <div class="card " *ngFor="let repository of repo" style="width: 22rem;" class="repo">
+          <div class="card-body">
+            <h5 class="card-title">Repo Name: &nbsp;{{repository.name}} </h5>
+            <div class="card-text">
+              <hr>
+              <div class="desc"><span class="top">Description:</span> &nbsp;{{repository.description}} </div>
+              <hr>
+              <div class="card-subtitle mb-2"><span class="top">Created On:</span> &nbsp;{{repository.created_at | date}}</div>
+            </div>
+            </div>
+  
 </div>
 
 
